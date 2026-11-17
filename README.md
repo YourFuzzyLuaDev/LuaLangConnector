@@ -237,8 +237,8 @@ The same thing for both pause and switch.
 
 # Getting started
 ## How do I use it?
-
-# Project structure
+First, is the project structure.
+## Project structure
 
 You'd probably think that you would need to give LuaLangConnector a folder, and I thought the same thing! but, LuaLangConnector reads all the .jar mods in your ```mods``` folder, finds the scripts, and registers them to Minecraft. so, you can still have your .jar mod with all the scripts in it!
 
@@ -253,41 +253,41 @@ src/
 
 |-- main/
 
-|    ├─ kotlin
+|    ├    ─ kotlin
 
-|    ├─ java
+|        ├─ java
 
-|    |─ lua/
+|        |─ lua/
 
-|    |   ├─ scripts/
+|        |   ├─ scripts/
 
-|    |   |    ├─ your scripts
+|        |   |    ├─ your scripts
 
-|    ├─ resources/
+|        ├─ resources/
 
-|    |       ├─ assets/
+|        |       ├─ assets/
 
-|    |       |     ├─ textures/
+|        |       |     ├─ textures/
 
-|    |       |     |      ├─ item/
+|        |       |     |      ├─ item/
 
-|    |       |     |      ├─ block
+|        |       |     |      ├─ block
 
-|    |       |     ├─ geo/
+|        |       |     ├─ geo/
 
-|    |       |     |    ├─ your-model.geo.json
+|        |       |     |    ├─ your-model.geo.json
 
-|    |       |     ├─ animations/
+|        |       |     ├─ animations/
 
-|    |       |     |    ├─ your-models-animation.animation.json
+|        |       |     |    ├─ your-models-animation.animation.json
 
-|    |       |     ├─ blockstates/
+|        |       |     ├─ blockstates/
 
-|    |       |     |      ├─ here, the blockstates are automated, you don't have to do anything here.
+|        |       |     |      ├─ here, the blockstates are automated, you don't have to do anything here.
 
-|    |       |     ├─ model/
+|        |       |     ├─ model/
 
-|    |       |     |    ├─ your-models-textures.png
+|        |       |     |    ├─ your-models-textures.png
 
 (I Know, the tree ended up weird thanks to Markdown's terrible space management)
 
