@@ -1,0 +1,46 @@
+{
+	"schemaVersion": 1,
+	"id": "lualangconnector",
+	"version": "${version}",
+	"name": "LuaLangConnector",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"YourFuzzyLuaDev"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/lualangconnector/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.lualngcon.LuaLangConnector",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.lualngcon.client.LuaLangConnectorClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"lualangconnector.mixins.json",
+		{
+			"config": "lualangconnector.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"geckolib": "*"
+	}
+}
