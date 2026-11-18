@@ -2,11 +2,11 @@
 LuaLangConnector is an easy-to-use framework to develop Minecraft mods using the Lua programming language, yeah, kind of ironic considering we've been using Java for so long ^^
 
 # Features
+```
 Automatic JSON Generation for both recipes and models
-
 Automated .mcmetas
-
 GeckoLib 3D Model & Animation support (Still in the works, to make sure it works, isn't it obvious)
+```
 
 # Here's the current API as a Lua table!
 ```lua
@@ -42,13 +42,14 @@ local player = {
 Let's look at it like this:
 All items, blocks, foods and tools share the same universal need: name, displayname, tooltip and textures.
 
-```name```: the internal name of your block, tool, food or item,
+```name```: the internal name of your block, tool, food or item
 
-```displayname```: the actual displayed name in-game,
+```displayname```: the actual displayed name in-game
 
-```tooltip```: the tooltip of your block, tool, food or item,
+```tooltip```: the tooltip of your block, tool, food or item
 
-and the ```textures``` table: a table where it has all the textures it needs with a given path. while the blocks have 6 faces, items only need one: the ```top``` face.
+and the ```textures``` table: a table where it has all the textures it needs with a given path. while the blocks have 6 faces, items only need one: the ```top``` face
+
 
 But what about the properties? well, they also share a table: the properties table. each one has it's own API implemented ^^
 
@@ -245,54 +246,47 @@ You'd probably think that you would need to give LuaLangConnector a folder, and 
 in your project template, we all know it has the ```java``` and ```kotlin``` folders. so? create a new one called ```lua``` inside src/main, and a ```scripts``` folder inside it. here, you'll place your scripts, which can be anything: a block, an item, an event manager, anything you imagine is there. LuaLangConnector will read those scripts and register them to Minecraft.
 
 ## Structure
-To make your mod, I'd recommend you do this:
+I'll be releasing an example project, but for now, I'd reccommend you make your projects like this:
 
-mod/
-
-src/
+```src/
 
 |-- main/
-
-|    ├    ─ kotlin
-
-|        ├─ java
-
-|        |─ lua/
-
-|        |   ├─ scripts/
-
-|        |   |    ├─ your scripts
-
-|        ├─ resources/
-
-|        |       ├─ assets/
-
-|        |       |     ├─ textures/
-
-|        |       |     |      ├─ item/
-
-|        |       |     |      ├─ block
-
-|        |       |     ├─ geo/
-
-|        |       |     |    ├─ your-model.geo.json
-
-|        |       |     ├─ animations/
-
-|        |       |     |    ├─ your-models-animation.animation.json
-
-|        |       |     ├─ blockstates/
-
-|        |       |     |      ├─ here, the blockstates are automated, you don't have to do anything here.
-
-|        |       |     ├─ model/
-
-|        |       |     |    ├─ your-models-textures.png
-
-(I Know, the tree ended up weird thanks to Markdown's terrible space management)
+|    ├─ kotlin
+|    ├─ java
+|    |─ lua/
+|    |   ├─ scripts/
+|    |   |    ├─ your scripts
+|    ├─ resources/
+|    |       ├─ assets/
+|    |       |     ├─ textures/
+|    |       |     |      ├─ item/
+|    |       |     |      ├─ block
+|    |       |     ├─ geo/
+|    |       |     |    ├─ your-model.geo.json
+|    |       |     ├─ animations/
+|    |       |     |    ├─ your-models-animation.animation.json
+|    |       |     ├─ blockstates/
+|    |       |     |      ├─ here, the blockstates are automated, you don't have to do anything here.
+|    |       |     ├─ model/
+|    |       |     |    ├─ your-models-textures.png
+```
 
 Remember: your recipes and models are automatically generated, so don't worry.
 
+# Installation
+You may be wondering: "How can I implement it in my project?"
+
+The thing is... you don't have to.
+
+Yes, it sounds weird, incorrect, almost wrong, but no.
+
+LuaLangConnector only needs to be inside your mods folder, as we saw previously. That's literally the dependency.
+
+If you want to make sure everything feels right, just place the following comment in your build.gradle.kts (or Java, depends on your setup):
+```
+// Dependencies
+// modImplementation("LuaLangConnector")
+```
 # Overall, LuaLangConnector is an API that I made because I wanted to program in Lua, easily.
 because, I thought: "What if Minecraft modding could be made with Lua?", and here we are.
 The mod isn't published yet, this is obviously just a repository, but I'll leave it anyways for you to read.
