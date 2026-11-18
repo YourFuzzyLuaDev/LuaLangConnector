@@ -1,9 +1,14 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+
 plugins {
 	id("net.fabricmc.fabric-loom-remap")
 	`maven-publish`
 	id("org.jetbrains.kotlin.jvm") version "2.4.21"
+}
+
+base {
+    archivesName.set("LuaLangConnector")
 }
 
 repositories {
@@ -23,14 +28,19 @@ repositories {
 }
 
 loom {
-	splitEnvironmentSourceSets()
+    splitEnvironmentSourceSets()
 
-	mods {
-		register("lualangconnector-0-0-0") {
-			sourceSet(sourceSets.main.get())
-			sourceSet(sourceSets.getByName("client"))
-		}
-	}
+    mixin {
+        useLegacyMixinAp = false
+        defaultRefmapName.set("lualangconnector.refmap.json")
+    }
+
+    mods {
+        register("lualangconnector-0-0-0") {
+            sourceSet(sourceSets.main.get())
+            sourceSet(sourceSets.getByName("client"))
+        }
+    }
 }
 
 dependencies {

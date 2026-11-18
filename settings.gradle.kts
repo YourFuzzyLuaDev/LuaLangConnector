@@ -14,4 +14,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = "lualangconnector-0-0-0"
+rootProject.name = "LuaLangConnector-"
