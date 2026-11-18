@@ -34,6 +34,10 @@ local player = {
         add = function(item, quantity) end, -- Adds something to the inventory
         elim = function(item, quantity) end, -- Removes something from the inventory
         has = function(item) end -- If the player has this, do something
+    },
+
+    effects = {
+        grant = function(effect, duration, amplifier) -- Grants an effect to the player
     }
 }
 ```
